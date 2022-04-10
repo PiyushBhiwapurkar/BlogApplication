@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.codewithpiyush.blog.Entities.User;
 import com.codewithpiyush.blog.Payloads.UserDto;
@@ -11,6 +12,7 @@ import com.codewithpiyush.blog.Repositeries.UserRepo;
 import com.codewithpiyush.blog.Services.UserService;
 import com.codewithpiyush.blog.Exceptions.*;
 
+@Service
 public class userServiceImplementation implements UserService {
 
 	@Autowired
@@ -63,7 +65,7 @@ public class userServiceImplementation implements UserService {
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
 		user.setPassword(userDto.getPassword());
-		user.setAbout(userDto.getPassword());
+		user.setAbout(userDto.getAbout());
 		return user;
 	}
 
@@ -72,7 +74,7 @@ public class userServiceImplementation implements UserService {
 		UserDto userDto = new UserDto();
 		userDto.setId(user.getId());
 		userDto.setName(user.getName());
-		userDto.setEmail(user.getName());
+		userDto.setEmail(user.getEmail());
 		userDto.setPassword(user.getPassword());
 		userDto.setAbout(user.getAbout());
 		
