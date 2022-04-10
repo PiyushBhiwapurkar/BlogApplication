@@ -25,12 +25,13 @@ public class User {
 	@Column(name = "user_name",nullable = false,length = 100)
 	private String name;
 	
-	@Column(name="Email",nullable = false,length=100)
+	@Column(name="email",nullable = false,length=100)
 	private String email;
 	
 	@Column(name="password",nullable = false)
 	private String password;
 	
+	@Column(name="about")
 	private String about;
 	
 }
