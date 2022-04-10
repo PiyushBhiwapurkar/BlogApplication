@@ -33,9 +33,10 @@ public class userServiceImplementation implements UserService {
 		
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
-		user.setPassword(user.getPassword());
+		user.setPassword(userDto.getPassword());
 		user.setAbout(userDto.getAbout());
-		return this.userToUserDto(user);
+		
+		return this.userToUserDto(this.userRepo.save(user));
 	}
 
 	@Override
