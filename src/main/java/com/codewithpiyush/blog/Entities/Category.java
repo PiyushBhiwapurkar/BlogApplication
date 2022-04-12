@@ -7,8 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name="category")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Category {
 
 	@Id
@@ -16,7 +23,7 @@ public class Category {
 	@Column(name="categoryId")
 	private Integer categoryId;
 	
-	@Column(name="categoryTitle")
+	@Column(name="categoryTitle", nullable = false,length = 100)
 	private String categoryTitle;
 	
 	@Column(name="categoryDescription")
