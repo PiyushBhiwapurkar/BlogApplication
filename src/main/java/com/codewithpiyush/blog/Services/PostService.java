@@ -3,6 +3,7 @@ package com.codewithpiyush.blog.Services;
 import java.util.List;
 
 import com.codewithpiyush.blog.Payloads.PostDto;
+import com.codewithpiyush.blog.Payloads.PostResponse;
 
 public interface PostService {
 
@@ -16,7 +17,7 @@ public interface PostService {
 	PostDto updatePost(PostDto post,Integer postId);
 	
 	//Get all Posts
-	List<PostDto> getAllPosts(Integer pageNo, Integer pageSize);
+	PostResponse getAllPosts(Integer pageNo, Integer pageSize, String sortBy, String sortDirection);
 	
 	//Get Post by Id
 	PostDto getPostById(Integer postId);

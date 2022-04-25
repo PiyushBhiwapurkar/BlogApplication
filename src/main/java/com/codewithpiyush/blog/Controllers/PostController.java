@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codewithpiyush.blog.Payloads.ApiResponse;
 import com.codewithpiyush.blog.Payloads.PostDto;
+import com.codewithpiyush.blog.Payloads.PostResponse;
 import com.codewithpiyush.blog.Services.PostService;
 
 @RestController
@@ -58,12 +59,15 @@ public class PostController {
 	
 	//Get All Posts
 	@GetMapping("/post")
-	public ResponseEntity<List<PostDto>> getAllPosts(
+	public ResponseEntity<PostResponse> getAllPosts(
 			@RequestParam(value="pageNumber",defaultValue = "0",required = false) Integer pageNumber,
-			@RequestParam(value = "pageSize",defaultValue = "1",required = false) Integer pageSize)
+			@RequestParam(value = "pageSize",defaultValue = "1",required = false) Integer pageSize,
+			@RequestParam(value="sortBy",defaultValue = "postId",required = false) String sortBy,
+			@RequestParam(value="sortDir",defaultValue = "asc",required = false) String sortDirection
+			)
 	{
-		List<PostDto> allPosts = this.postService.getAllPosts(pageNumber,pageSize);
-		return new ResponseEntity<List<PostDto>>(allPosts,HttpStatus.OK);
+		PostResponse allPosts = this.postService.getAllPosts(pageNumber,pageSize,sortBy,sortDirection);
+		return new ResponseEntity<PostResponse>(allPosts,HttpStatus.OK);
 	}
 	
 	//Get Post By Id
