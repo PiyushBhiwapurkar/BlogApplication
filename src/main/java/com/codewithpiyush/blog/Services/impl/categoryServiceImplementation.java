@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.codewithpiyush.blog.Entities.Category;
 import com.codewithpiyush.blog.Exceptions.ResourseNotFoundException;
 import com.codewithpiyush.blog.Payloads.CategoryDto;
-import com.codewithpiyush.blog.Repositeries.categoryRepo;
+import com.codewithpiyush.blog.Repositeries.CategoryRepo;
 import com.codewithpiyush.blog.Services.CategoryService;
 
 @Service
@@ -19,7 +19,7 @@ public class categoryServiceImplementation implements CategoryService{
 	private static final String Id = null;
 
 	@Autowired
-	categoryRepo categoryRepo;
+	CategoryRepo categoryRepo;
 	
 	@Autowired
 	private ModelMapper modelmapper;

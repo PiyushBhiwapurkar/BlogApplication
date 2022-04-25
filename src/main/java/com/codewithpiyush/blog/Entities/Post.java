@@ -8,12 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "post")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Post {
 
 	@Id
@@ -22,6 +28,9 @@ public class Post {
 	
 	@Column(name = "post_title",length = 1000,nullable = false)
 	private String title;
+	
+	@Column(name = "post_content",length = 100000,nullable = false)
+	private String content;
 	
 	@Column(name="post_image")
 	private String imageName;

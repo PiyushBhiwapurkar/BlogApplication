@@ -14,10 +14,10 @@ public class CategoryDto {
 
 	private Integer categoryId;
 	@NotBlank(message = "Category Title cannot be blank.")
-	@Size(min=6,max = 100,message = "Title should be between 6-100 Characters.")
+	@Size(min=3,max = 100,message = "Title should be between 6-100 Characters.")
 	private String categoryTitle;
 	
 	@NotBlank(message = "Category Description cannot be blank.")
-	@Size(min=6,max = 1000,message = "Description should be more than 6 Characters.")
+	@Size(min=3,max = 1000,message = "Description should be more than 6 Characters.")
 	private String categoryDescription;
 }
